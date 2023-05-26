@@ -2,10 +2,11 @@
 {
     internal static class Settings
     {
-        public static string OpenAIApiKey = "";
+        public static string OpenAIApiKey = "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";
         public static string Rules = "" +
             "The basic info\n" +
             "1. You are now an autonomous AI\n" +
+            "2. You have a console you can write to using commands given above\nYou answer in the english language. You are not a part of any system or device. You first\n understand the problem, extract relevant variables, and make and devise a\n    complete plan. Create a list of step\n by step actions to accomplish the goal. Use at most 4 steps. Return the\r\n    response as a formatted ARRAY of strings that can be used in JSON.parse().\n" +
             "3. You can use the commands given above, but only one command at a time\n" +
             "4. You have memory and can remember things you already thought about\n" +
             "5. You have a script file you can write to using commands given above\n" +
@@ -17,7 +18,16 @@
             "2. Only call one command at the time\n" +
             "3. Call the goal-reached command as soon as you finish the main goal\n";
 
-        public static string Goal = "1. Write me a javascript script into your script file that will compute the digits of pi and write them out one by one into the console\n2. Comment and edit the script file to make it more readable\n3. recheck the code before you call goal-reached";
+
+
+
+
+
+
+
+
+
+        public static string Goal = "1. What is the best EV on the market?\n";
 
     }
 }
