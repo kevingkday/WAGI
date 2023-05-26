@@ -88,6 +88,6 @@ namespace WAGIapp.AI
 
     public static class ChatModel
     {
-        public static string ChatGPT => "gpt-3.5-turbo";
+        public static string ChatGPT => "gpt-4";
     }
 }
