@@ -6,83 +6,22 @@
         }
         else
         {
-            <MudIcon Icon="@action.Icon" Title="@action.Title" Size="Size.Large" />
 
+
+            <MudIcon Icon="@action.Icon" Title="@action.Title" Size="Size.Large" />
+       
+        
+        
         }
         <h1>@action.Title</h1>
     </MudStack>
-
-    @if(action.Title == "Memory")
-    {
-        @if (Data is GraphMemoryData graphData)
-        {
-
-            @foreach (var node in graphData.nodes)
-            {
-                <p>@node.id - @node.name - @node.text</p>
-            }
-
-    }
-
-
     <p style="width: 500px;">
         @action.Text
     </p>
-
-
-
-
- }
-
-
-
-
-
-
-
-
 </MudCard>
 
 @code {
     [Parameter]
     public LogAction action { get; set; }
-
-
-    protected object Data { get; set; }
-
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        if (!firstRender)
-            return;
-
-        Task.Run(async () =>
-        {
-
-            while (true)
-            {
-                await Task.Delay(1000);
-                if (Master.Singleton.Memory.MemoryChanged)
-                {
-
-
-                    Data = Master.Singleton.Memory.GetGraphData();
-
-                    await InvokeAsync(StateHasChanged);
-                }
-
-
-
-                StateHasChanged();
-            }
-
-
-
-
-
-        });
-    }
-
-
 
 }
