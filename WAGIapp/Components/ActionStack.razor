@@ -1,16 +1,32 @@
 ﻿@inject IJSRuntime JS
 
-<MudContainer Style="position: fixed; bottom: 0; right: 0; width: fit-content;" Class="actionStack">
+<MudContainer Style="width: fit-content;border:solid; color:white; border-width:2px" >
     @if (showStack)
     {
-        <MudStack Style=" width: 500px; overflow-y: hidden; overflow-x: hidden; max-height: 700px;" id="actionStack" >
+        <MudStack Style="width: 500px; overflow-y: hidden; overflow-x: hidden; max-height: 700px;border:solid; color:white; border-width:2px" id="actionStack">
             @foreach (var action in Master.Singleton.Actions.GetActions())
             {
                 <ActionCard action="@action" />
             }
         </MudStack>
+
+
+
+
     }
+
     <MudIconButton Icon="@Icons.Material.Outlined.TextSnippet" OnClick="() => { showStack = !showStack; }" />
+
+
+    <MudPaper Style="width: 500px; overflow-y: hidden; overflow-x: hidden; max-height: 700px;border:solid; color:white; border-width:2px">
+        @foreach (var note in Master.Singleton.FormatedNotes.Split("\n"))
+        {
+            <p>Notes here: @note</p>
+        }
+    </MudPaper>
+
+
+
 </MudContainer>
 
 @code {
