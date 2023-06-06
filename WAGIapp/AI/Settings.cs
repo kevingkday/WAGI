@@ -2,7 +2,7 @@
 {
     internal static class Settings
     {
-        public static string OpenAIApiKey = "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";
+        public static string OpenAIApiKey = "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";
         public static string Rules = "" +
             "The basic info\n" +
             "1. You are now an autonomous AI\n" +
@@ -27,7 +27,7 @@
 
 
 
-        public static string Goal = "1. What is the best EV on the market?\n";
+        public static string Goal = "1. Find the most recent news items about AI. \n2. Summarize the top 5 results. \n3. Extract any emails from the results. \n4. Terminate when complete.";
 
     }
 }
