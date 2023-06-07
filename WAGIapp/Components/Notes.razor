@@ -1,7 +1,7 @@
 ﻿<MudIconButton Icon="@Icons.Material.Outlined.TextSnippet" OnClick="() => { showNotes = !showNotes; }" />
 @if (showNotes)
 {
-    <MudPaper Style="max-width: 300px; max-height: 500px; overflow-y: scroll;">
+    <MudPaper Style="max-width: 300px; max-height: 500px; overflow-y: scroll;border:solid; color:white; border-width:2px">
         @foreach (var note in Master.Singleton.FormatedNotes.Split("\n"))
         {
             <p>@note</p>

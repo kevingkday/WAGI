@@ -139,7 +139,7 @@ namespace WAGIapp.AI
 
                 }
             }
-
+          
             return data;
         }
     }
